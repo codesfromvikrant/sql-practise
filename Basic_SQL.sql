@@ -48,5 +48,36 @@ SELECT * FROM employees ORDER BY department ASC, salary DESC;
 -- select the first 10 employees from the employees table
 SELECT * FROM employees LIMIT 10;
 
+-- Null is a special value in SQL that represents missing or unknown data
+-- select all employees whose department is unknown
+SELECT * FROM employees WHERE department IS NULL;
+
+-- Insert a new employee into the employees table
+INSERT INTO employees (first_name, last_name, department, salary) VALUES ('John', 'Smith', 'Sales', 50000);
+
+-- Insert multiple employees into the employees table
+INSERT INTO employees (first_name, last_name, department, salary) VALUES ('John', 'Smith', 'Sales', 50000), ('Jane', 'Doe', 'Marketing', 60000);
+
+-- Update the salary of all employees whose department is "Sales"
+UPDATE employees SET salary = 60000 WHERE department = 'Sales';
+
+-- Update multiple columns of all employees whose department is "Sales"
+UPDATE employees SET salary = 60000, department = 'Marketing' WHERE department = 'Sales';
+
+-- Delete all employees whose department is "Sales"
+DELETE FROM employees WHERE department = 'Sales';
+
+-- Delete all employees
+DELETE FROM employees;
+
+-- Drop the employees table
+DROP TABLE employees;
+
+-- Create a new table called "users" with the following columns: id, username, password
+CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT);
+
+
+
+
 
 
