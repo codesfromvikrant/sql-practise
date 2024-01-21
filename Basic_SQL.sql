@@ -76,8 +76,26 @@ DROP TABLE employees;
 -- Create a new table called "users" with the following columns: id, username, password
 CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT);
 
+-- Insert a new user into the users table
+INSERT INTO users (username, password) VALUES ('johnsmith', 'password');
 
+-- MIN() and MAX() are aggregate functions that return the minimum and maximum values in a column
+-- select the minimum salary from the employees table
+SELECT MIN(salary) FROM employees;
+SELECT MAX(salary) FROM employees;
 
+-- Use an Alias to rename the column
+-- select the minimum salary from the employees table and rename the column to "min_salary"
+SELECT MIN(salary) AS min_salary FROM employees;
 
+-- AVG() is an aggregate function that returns the average value in a column
+-- select the average salary from the employees table
+SELECT AVG(salary) FROM employees;
 
+-- SUM() is an aggregate function that returns the sum of all values in a column
+-- select the sum of all salaries from the employees table
+SELECT SUM(salary) FROM employees;
 
+-- GROUP BY is a clause used with aggregate functions to combine data from one or more columns
+-- select the department and the average salary of all employees in each department
+SELECT department, AVG(salary) FROM employees GROUP BY department;
